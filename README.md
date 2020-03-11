@@ -16,7 +16,11 @@ Instragram clone with Express + Rrisma + React and React Native
 - [x] Edit my profile
 - [x] See user profile
 - [x] See My profile
-- [ ] See the full photo
-- [ ] Upload photos
-- [ ] Edit the photo (Delete)
-- [ ] See the feed
+- [x] See the full photo
+- [x] Upload photos
+- [x] Edit the photo (Delete)
+- [x] See the feed
+- [x] Send private Message
+- [x] See rooms
+- [x] See room
+- [x] Receive Message (Realtime)

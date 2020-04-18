@@ -2,16 +2,26 @@ import {prisma} from "../../../../generated/prisma-client";
 
 export default {
     Mutation: {
-        createAccount: async(_, args, { request }) => {
+        createAccount: async(_, args) => {
             const {username, email, firstName = "", lastName = "", bio = ""} = args;
-            const user = await prisma.createUser({
+            const exists = await prisma.$exists.user({
+                OR: [
+                    {username}, {email}
+                ]
+            });
+
+            if(exists) {
+                throw Error("사용중인 username/ email 이 있습니다.");
+            }
+            await prisma.createUser({
                 username,
                 email,
                 firstName,
                 lastName,
                 bio
             });
-            return user;
+            return true;
+ 
         }
     }
 };

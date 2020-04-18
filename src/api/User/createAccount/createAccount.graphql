@@ -2,12 +2,8 @@ type Mutation {
     createAccount(
         username:String!
         email:String!
-        fistName:String
+        firstName:String
         lastName:String
         bio:String
-        ): User!
-}
-
-type Query{
-    someting:String!
+        ): Boolean!
 }
